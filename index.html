@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Social-feed css -->
+    <link href="css/example.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/social-feed/css/jquery.socialfeed.css" rel="stylesheet" type="text/css">
+    <!-- font-awesome for social network icons -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet'>
+    <!-- This style is needed only for the plugin demo page. Do not use it in your projects -->
+</head>
+
+<body>
+    <section class="feed">
+        <div class="container">
+            <!--div class="controls">
+                <input type="field" value="#dolomiti" id="query" />
+                <input type="button" value="Update" />
+            </div-->
+            <div class="social-feed-container">
+            </div>
+        </div>
+    </section>
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+    <!-- Codebird.js - required for TWITTER -->
+    <script src="bower_components/codebird-js/codebird.js"></script>
+    <!-- doT.js for rendering templates -->
+    <script src="bower_components/doT/doT.min.js"></script>
+    <!-- Moment.js for showing "time ago" -->
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <!-- Social-feed js -->
+    <script src="bower_components/social-feed/js/jquery.socialfeed.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        var updateFeed = function() {
+
+            $('.social-feed-container').socialfeed({
+                // FACEBOOK
+                facebook: {
+                    accounts: ["@GraydientCreative"],
+                    limit: 5,
+                    access_token: '1798932003713134|0f4f02061dfc1d708d17b99668f3ee6e'
+                },
+                // Twitter
+                twitter: {
+                    accounts: ["@experienceGray"],
+                    limit: 5,
+                    consumer_key: 'JjUHvbcVoYWVMYBaq4IzDPDk4',                             // make sure to have your app read-only
+                    consumer_secret: '7R3g74dENJyHvUYMyuOGfVUEDta7zYO2sN0hiDJwsW9SEFM0rX', // make sure to have your app read-only
+                },
+                // INSTAGRAM
+                instagram: {
+                    accounts: ["&2282195281"],
+                    limit: 5,
+                    client_id: 'c8f0be79ea7c47f7bdac9a80c33c00f5',
+                    access_token: '2282195281.1677ed0.df2ba73d081c400b9347fea08e15102d'
+                },
+
+                // RSS
+
+                rss:{
+                    urls: ['http://blog.graydientcreative.com/feed/'], //Array: Specifiy a list of rss feed from which to pull posts
+                    limit: 3                                      //Integer: max number of posts to load for each url
+                },
+
+                // GENERAL SETTINGS
+                length: 200,
+                show_media: true,
+                template : "bower_components/social-feed/template.html",
+                // Moderation function - if returns false, template will have class hidden
+                moderation: function(content) {
+                    return (content.text) ? content.text.indexOf('fuck') == -1 : true;
+                },
+                //update_period: 5000,
+                // When all the posts are collected and displayed - this function is evoked
+                callback: function() {
+                    console.log('all posts are collected');
+                }
+            });
+        };
+
+        updateFeed();
+
+        setTimeout(function() {
+            $('.social-feed-container').masonry({
+            // options
+                itemSelector: '.social-feed-element'
+            });
+        }, 3000);
+
+    });
+    </script>
+
+</body>
+</html>
