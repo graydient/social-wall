@@ -15,10 +15,6 @@
 <body>
     <section class="feed">
         <div class="container">
-            <!--div class="controls">
-                <input type="field" value="#dolomiti" id="query" />
-                <input type="button" value="Update" />
-            </div-->
             <div class="social-feed-container">
             </div>
         </div>
@@ -72,7 +68,7 @@
                 // GENERAL SETTINGS
                 length: 200,
                 show_media: true,
-                template : "bower_components/social-feed/template.html",
+                template : "template.html",
                 // Moderation function - if returns false, template will have class hidden
                 moderation: function(content) {
                     return (content.text) ? content.text.indexOf('fuck') == -1 : true;
@@ -100,6 +96,9 @@
             });
 
         }, 3000);
+
+
+
     });
     </script>
 

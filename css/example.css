@@ -27,6 +27,11 @@ body {
   width: 100%;
 }
 
+.bottom-info {
+  padding: 5px;
+  background-color: aliceblue;
+}
+
 .container {
   display: inline-block;
   width: 100%; }
