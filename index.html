@@ -66,7 +66,7 @@
 
                 rss:{
                     urls: ['http://blog.graydientcreative.com/feed/'], //Array: Specifiy a list of rss feed from which to pull posts
-                    limit: 3                                      //Integer: max number of posts to load for each url
+                    limit: 5                                      //Integer: max number of posts to load for each url
                 },
 
                 // GENERAL SETTINGS
@@ -94,11 +94,12 @@
                 $grid.masonry({
                 // options
                     itemSelector: '.social-feed-element',
-                    columnWidth: 10
+                    columnWidth:15, 
+                    gutterWidth: 15  
                 });
             });
-        }, 3000);
 
+        }, 3000);
     });
     </script>
 
