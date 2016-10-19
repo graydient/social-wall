@@ -26,6 +26,7 @@
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
     <!-- Codebird.js - required for TWITTER -->
     <script src="bower_components/codebird-js/codebird.js"></script>
     <!-- doT.js for rendering templates -->
@@ -87,9 +88,14 @@
         updateFeed();
 
         setTimeout(function() {
-            $('.social-feed-container').masonry({
-            // options
-                itemSelector: '.social-feed-element'
+            var $grid = $('.social-feed-container').imagesLoaded( function() {
+            // init Masonry after all images have loaded
+                // init Masonry
+                $grid.masonry({
+                // options
+                    itemSelector: '.social-feed-element',
+                    columnWidth: 10
+                });
             });
         }, 3000);
 
