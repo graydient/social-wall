@@ -739,7 +739,7 @@ if (typeof Object.create !== 'function') {
                         post.id = index;
                         post.dt_create= moment(element.publishedDate, 'ddd, DD MMM YYYY HH:mm:ss ZZ', 'en');
                         post.author_link = '';
-                        post.author_picture = '';
+                        post.author_picture = 'http://pbs.twimg.com/profile_images/682302916116492289/vZJmS9yE_normal.jpg';
                         post.author_name = element.author;
                         post.message = Utility.stripHTML(element.title);
                         post.description = Utility.stripHTML(element.content);
