@@ -753,7 +753,7 @@ if (typeof Object.create !== 'function') {
                         post.dt_create= moment(item.published, 'YYYY-MM-DDTHH:mm:ssZ', 'en');
 
                         post.author_link = '';
-                        post.author_picture = '';
+                        post.author_picture = 'http://pbs.twimg.com/profile_images/682302916116492289/vZJmS9yE_normal.jpg';
                         post.author_name = '';
                         if( item.creator !== undefined ){
                             post.author_name = item.creator;
