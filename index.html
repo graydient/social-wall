@@ -31,6 +31,7 @@
     <script src="js/moment.min.js"></script>
     <!-- Social-feed js -->
     <script src="js/jquery.socialfeed.js"></script>
+    <script src="js/vein.js"></script>
     <script>
     $(document).ready(function() {
 
@@ -76,7 +77,24 @@
                 //update_period: 5000,
                 // When all the posts are collected and displayed - this function is evoked
                 callback: function() {
-                    console.log('all posts are collected');
+                    
+                    //Twitter
+                    if ($('.fa-twitter').length) {
+                        $('.fa-twitter').closest('.bottom-info').css('background-color', '#b9d36b');
+                    }
+                    //Facebook
+                    if ($('.fa-facebook').length) {
+                        $('.fa-facebook').closest('.bottom-info').css('background-color', '#e8842c');
+                    }
+                    //WordPress
+                    if ($('.fa-rss').length) {
+                        $('.fa-rss').closest('.bottom-info').css('background-color', '#00a9a6');
+                    }
+                    //Instagram
+                    if ($('.fa-instagram').length) {
+                        $('.fa-instagram').closest('.bottom-info').css('background-color', '#dbb44b');
+                    }
+
                 }
             });
         };
@@ -96,8 +114,6 @@
             });
 
         }, 3000);
-
-
 
     });
     </script>

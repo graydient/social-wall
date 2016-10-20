@@ -97,7 +97,7 @@
 }
 
 .social-feed-element .muted {
-    color: #999;
+    color: #fff;
 }
 .social-feed-element a.muted:hover,
 .social-feed-element a.muted:focus {
@@ -131,6 +131,6 @@
 
 
 .social-feed-element .author-title{
-    color: #444;
+    color: #fff;
     font-weight: 500;  
 }
